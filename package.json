@@ -1,17 +1,14 @@
 {
-  "name": "parcel-starter",
+  "name": "react-from-scratch",
   "version": "1.0.1",
   "private": true,
-  "description": "A starter template repo for 'vanilla SPAs'",
+  "description": "Based on a talk by Tejas Kumar",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html"
   },
   "keywords": [
-    "html-css-js",
-    "student",
-    "spa",
-    "parcel"
+    "react"
   ],
   "author": "Manav Misra",
   "license": "MIT",
