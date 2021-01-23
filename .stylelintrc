@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"declaration-colon-newline-after": null,
+		"indentation": 2,
+		"order/properties-alphabetical-order": true
+	}
+}
