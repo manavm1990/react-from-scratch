@@ -15,7 +15,6 @@
   "devDependencies": {
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^4.3.8",
     "ini": "^2.0.0",
@@ -30,7 +29,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,md}": "prettier --write"
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.{js,jsx,md}": "prettier --write"
   }
 }
