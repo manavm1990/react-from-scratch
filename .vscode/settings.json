@@ -33,5 +33,9 @@
   "workbench.view.alwaysShowHeaderActions": true,
   "editor.parameterHints.enabled": false,
   "ponicode.testSettings.testLocation.locationType": "Same folder as source file",
-  "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}"
+  "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}",
+  "cSpell.words": [
+    "Kumar",
+    "Tejas"
+  ]
 }
