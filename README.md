@@ -27,6 +27,8 @@ Namely:
    iii) children array
 5. `createElement` will be called 🤙🏾 for each element from the inside out, top to bottom.
 6. JSX **requires** us to have 1 'wrapping tag'.
+7. We can `return element.` In the **parent element**, we see 👀 a _nested object\tree 🌲._ **This represents the virtual DOM 🤯!**
+   ![`console.log` of `element` with `tag`, `props` and `children` args](./images/1.png)
 
 ## Contact
 
