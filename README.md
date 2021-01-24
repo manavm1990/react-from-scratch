@@ -1,7 +1,5 @@
 # React From Scratch
 
-<!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -15,6 +13,20 @@ Namely:
 
 1. JSX and the Virtual DOM
 2. Hooks - how/why?
+
+---
+
+### 🎶
+
+1. React is nothing but an object. 🙄
+2. React expects: `createElement`
+3. Use `...args` to check what a fxn. expects
+4. `createElement` expects an array with 3 things in the following order:
+   i) 'tag name'
+   ii) attributes object (props)
+   iii) children array
+5. `createElement` will be called 🤙🏾 for each element from the inside out, top to bottom.
+6. JSX **requires** us to have 1 'wrapping tag'.
 
 ## Contact
 
