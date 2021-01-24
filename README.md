@@ -12,7 +12,8 @@ Based on a talk by Tejas Kumar, just trying to better understand the inner worki
 Namely:
 
 1. JSX and the Virtual DOM
-2. Hooks - how/why?
+2. `render`
+3. Hooks - how/why?
 
 ---
 
@@ -29,6 +30,7 @@ Namely:
 6. JSX **requires** us to have 1 'wrapping tag'.
 7. We can `return element.` In the **parent element**, we see 👀 a _nested object\tree 🌲._ **This represents the virtual DOM 🤯!**
    ![`console.log` of `element` with `tag`, `props` and `children` args](./images/1.png)
+8. Mount that 💩 with `render`. This function will `createTextNode` or 'map' `props`/`children` from the 'react element' to a 'real element!' 🤯
 
 ## Contact
 
