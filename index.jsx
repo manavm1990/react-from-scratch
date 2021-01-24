@@ -1,9 +1,12 @@
 const React = {
+  // Creates Virtual DOM elements (as opposed to 'document.createElement')
   createElement(tag, props, ...children) {
-    // Is 'tag' a functional component?
-    return typeof tag === "function"
-      ? tag(props)
-      : { tag, props: { ...props, children } };
+    if (typeof tag === "function") {
+      console.info("tag is a fxn.", tag(props));
+      return tag(props);
+    }
+    console.info("tag is NOT a fxn.", { tag, props: { ...props, children } });
+    return { tag, props: { ...props, children } };
   },
 };
 
@@ -16,30 +19,29 @@ const React = {
 const render = (reactThing, container) => {
   if (["string", "number"].includes(typeof reactThing)) {
     container.appendChild(document.createTextNode(String(reactThing)));
-    return;
-  }
+  } else {
+    // Use 'reactThing.tag' to create DOM Things
+    const el = document.createElement(reactThing.tag);
 
-  // Use 'reactThing.tag' to create DOM Things
-  const el = document.createElement(reactThing.tag);
+    // Gather up 'non-children' props
+    if (reactThing.props) {
+      Object.keys(reactThing.props)
+        .filter((prop) => prop !== "children")
+        .forEach((prop) => {
+          // Assign each 'non-🧒🏾 prop' of 'reactThing' as a 'prop' of the 'real' Thing
+          el[prop] = reactThing[prop];
+        });
+    }
 
-  // Gather up 'non-children' props
-  if (reactThing.props) {
-    Object.keys(reactThing.props)
-      .filter((prop) => prop !== "children")
-      .forEach((prop) => {
-        // Assign each 'non-🧒🏾 prop' of 'reactThing' as a 'prop' of the 'real' Thing
-        el[prop] = reactThing[prop];
+    // Recursively render 'children props' onto 'el'
+    if (reactThing.props.children) {
+      reactThing.props.children.forEach((child) => {
+        render(child, el);
       });
-  }
+    }
 
-  // Recursively render 'children props' onto 'el'
-  if (reactThing.props.children) {
-    reactThing.props.children.forEach((child) => {
-      render(child, el);
-    });
+    container.appendChild(el);
   }
-
-  container.appendChild(el);
 };
 
 const App = () => (
@@ -53,4 +55,11 @@ const App = () => (
   </main>
 );
 
-render(<App />, document.getElementById("app"));
+// App();
+<App />;
+
+// render(
+//   // JSX triggers 'React.createElement'
+//   <App />,
+//   document.getElementById("app")
+// );
